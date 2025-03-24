@@ -1,0 +1,40 @@
+### HTTP Requests for Testing APIs
+
+### Add a new image
+POST http://localhost:8080/api/addImage
+Content-Type: application/json
+
+{
+  "url": "https://www.java.com/content/published/api/v1.1/assets/CONT1DF566DC18A1436D85F8C27750810B1C/native?cb=_cache_371f&channelToken=1f7d2611846d4457b213dfc9048724dc",
+  "duration": 5,
+  "slideshow": {
+    "id": 1
+  }
+}
+
+### Delete Image
+DELETE http://localhost:8080/api/deleteImage/13
+
+### Add Slideshow
+POST http://localhost:8080/api/addSlideshow
+Content-Type: application/json
+
+{
+  "images": [
+    { "url": "https://www.java.com/content/published/api/v1.1/assets/CONT1DF566DC18A1436D85F8C27750810B1C/native?cb=_cache_371f&channelToken=1f7d2611846d4457b213dfc9048724dc", "duration": 4 },
+    { "url": "https://www.java.com/content/published/api/v1.1/assets/CONT1DF566DC18A1436D85F8C27750810B1C/native?cb=_cache_371f&channelToken=1f7d2611846d4457b213dfc9048724dc", "duration": 5 }
+  ]
+}
+
+### Delete Slideshow
+DELETE http://localhost:8080/api/deleteSlideshow/15
+
+### Search Images
+GET http://localhost:8080/api/images/search?query=image&duration=0
+
+### Get Slideshow Images
+GET http://localhost:8080/api/slideShow/1/slideshowOrder
+
+### Add Proof of Play
+POST http://localhost:8080/api/slideShow/1/proof-of-play/2
+
